@@ -3,14 +3,15 @@
 	$seconds = 300000;
 	set_time_limit ($seconds);
 
-	//path to your plex media server
-	$plexMediaServerFolder = 'C:\\Users\\*****Username****\\AppData\\Local\\Plex Media Server\\';
-	
-	$mediaFolder = $plexMediaServerFolder.'Media\\localhost';
-
 	class MyDB extends SQLite3{
 		
 		function __construct(){
+			
+			//path to your plex media server
+			$plexMediaServerFolder = 'C:\\Users\\*****Username****\\AppData\\Local\\Plex Media Server\\';
+			
+			$mediaFolder = $plexMediaServerFolder.'Media\\localhost';
+			
 			$this->open($plexMediaServerFolder.'Plug-in Support\\Databases\\com.plexapp.plugins.library.db');
 		}
 		
